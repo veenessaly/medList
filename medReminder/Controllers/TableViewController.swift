@@ -21,11 +21,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     let db = Firestore.firestore()
     
-    var meds: [Med] = [
-        Med(name: "Lovastatin", dose: "20mg", frequency: "once at bedtime"),
-        Med(name: "Lisinopril", dose: "20mg", frequency: "once daily"),
-        Med(name: "Aspirin", dose: "81 mg", frequency: "once daily")
-    ]
+    var meds: [Med] = []
 
     
     override func viewDidLoad() {
@@ -33,6 +29,32 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
         tableView.dataSource = self
         tableView.dataSource = self
+        
+        loadMedications()
+    }
+    
+    func loadMedications(){
+        meds = []
+        
+        db.collection(K.FStore.collectionName).getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting medication list: \(err)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents{
+                    for document in snapshotDocuments {
+                        let data = document.data()
+                        if let medName = data[K.FStore.nameField] as? String, let medDose = data[K.FStore.doseField] as? String, let medFrequency = data[K.FStore.freqField] as? String {
+                            let newMed = Med(name: medName, dose: medDose, frequency: medFrequency)
+                            self.meds.append(newMed)
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func addMed(_ sender: UIButton) {
