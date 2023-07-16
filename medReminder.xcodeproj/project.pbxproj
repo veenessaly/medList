@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		08A64B332A59574D0026621D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B322A59574D0026621D /* AppDelegate.swift */; };
 		08A64B352A59574D0026621D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B342A59574D0026621D /* SceneDelegate.swift */; };
-		08A64B372A59574D0026621D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B362A59574D0026621D /* ViewController.swift */; };
+		08A64B372A59574D0026621D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B362A59574D0026621D /* TableViewController.swift */; };
 		08A64B3A2A59574D0026621D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A64B382A59574D0026621D /* Main.storyboard */; };
 		08A64B3C2A5957500026621D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A64B3B2A5957500026621D /* Assets.xcassets */; };
-		08A64B3F2A5957500026621D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A64B3D2A5957500026621D /* LaunchScreen.storyboard */; };
+		08A64B482A59579B0026621D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A64B462A59579B0026621D /* LaunchScreen.storyboard */; };
+		08A64B4A2A5962590026621D /* Med.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B492A5962590026621D /* Med.swift */; };
+		08A64B522A59EC6D0026621D /* MedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A64B512A59EC6C0026621D /* MedCell.swift */; };
+		08EB0E402A5A87F900F0FCFA /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 08EB0E3F2A5A87F900F0FCFA /* AlamofireImage */; };
+		08EB0E422A5BDC5900F0FCFA /* MedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB0E412A5BDC5800F0FCFA /* MedDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08A64B2F2A59574D0026621D /* medReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = medReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A64B322A59574D0026621D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08A64B342A59574D0026621D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08A64B362A59574D0026621D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		08A64B362A59574D0026621D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		08A64B392A59574D0026621D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08A64B3B2A5957500026621D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		08A64B3E2A5957500026621D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08A64B402A5957500026621D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A64B472A59579B0026621D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Medicine reminder file/medicine_reminder/medicine_reminder/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		08A64B492A5962590026621D /* Med.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med.swift; sourceTree = "<group>"; };
+		08A64B512A59EC6C0026621D /* MedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedCell.swift; sourceTree = "<group>"; };
+		08EB0E412A5BDC5800F0FCFA /* MedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EB0E402A5A87F900F0FCFA /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +66,40 @@
 			children = (
 				08A64B322A59574D0026621D /* AppDelegate.swift */,
 				08A64B342A59574D0026621D /* SceneDelegate.swift */,
-				08A64B362A59574D0026621D /* ViewController.swift */,
-				08A64B382A59574D0026621D /* Main.storyboard */,
+				08A64B4E2A5966200026621D /* Views */,
+				08A64B4C2A5965940026621D /* Controllers */,
+				08A64B4B2A59645F0026621D /* Models */,
 				08A64B3B2A5957500026621D /* Assets.xcassets */,
-				08A64B3D2A5957500026621D /* LaunchScreen.storyboard */,
+				08A64B462A59579B0026621D /* LaunchScreen.storyboard */,
 				08A64B402A5957500026621D /* Info.plist */,
+				08A64B512A59EC6C0026621D /* MedCell.swift */,
+				08EB0E412A5BDC5800F0FCFA /* MedDetailsViewController.swift */,
 			);
 			path = medReminder;
+			sourceTree = "<group>";
+		};
+		08A64B4B2A59645F0026621D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08A64B492A5962590026621D /* Med.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08A64B4C2A5965940026621D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08A64B362A59574D0026621D /* TableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		08A64B4E2A5966200026621D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08A64B382A59574D0026621D /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +118,9 @@
 			dependencies = (
 			);
 			name = medReminder;
+			packageProductDependencies = (
+				08EB0E3F2A5A87F900F0FCFA /* AlamofireImage */,
+			);
 			productName = medReminder;
 			productReference = 08A64B2F2A59574D0026621D /* medReminder.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 08A64B262A59574D0026621D;
+			packageReferences = (
+				08EB0E3E2A5A87F900F0FCFA /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 08A64B302A59574D0026621D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,7 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A64B3F2A5957500026621D /* LaunchScreen.storyboard in Resources */,
+				08A64B482A59579B0026621D /* LaunchScreen.storyboard in Resources */,
 				08A64B3C2A5957500026621D /* Assets.xcassets in Resources */,
 				08A64B3A2A59574D0026621D /* Main.storyboard in Resources */,
 			);
@@ -138,8 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A64B372A59574D0026621D /* ViewController.swift in Sources */,
+				08EB0E422A5BDC5900F0FCFA /* MedDetailsViewController.swift in Sources */,
+				08A64B372A59574D0026621D /* TableViewController.swift in Sources */,
 				08A64B332A59574D0026621D /* AppDelegate.swift in Sources */,
+				08A64B4A2A5962590026621D /* Med.swift in Sources */,
+				08A64B522A59EC6D0026621D /* MedCell.swift in Sources */,
 				08A64B352A59574D0026621D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,10 +199,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		08A64B3D2A5957500026621D /* LaunchScreen.storyboard */ = {
+		08A64B462A59579B0026621D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				08A64B3E2A5957500026621D /* Base */,
+				08A64B472A59579B0026621D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08EB0E3E2A5A87F900F0FCFA /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08EB0E3F2A5A87F900F0FCFA /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08EB0E3E2A5A87F900F0FCFA /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08A64B272A59574D0026621D /* Project object */;
 }
