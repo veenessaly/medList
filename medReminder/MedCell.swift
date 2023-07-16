@@ -12,8 +12,8 @@ class MedCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var doseLabel: UILabel!
     @IBOutlet weak var frequencyLabel: UILabel!
-    @IBOutlet weak var takenLabel: UILabel!
-    @IBOutlet weak var remainingLabel: UILabel!
+//    @IBOutlet weak var takenLabel: UILabel!
+//    @IBOutlet weak var remainingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

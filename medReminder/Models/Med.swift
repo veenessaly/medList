@@ -11,6 +11,6 @@ struct Med {
     let name: String
     let dose: String
     let frequency: String
-    let lastTaken: String
-    let remaining: String
+//    let lastTaken: String
+//    let remaining: String
 }
