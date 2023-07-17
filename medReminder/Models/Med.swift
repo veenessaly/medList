@@ -13,4 +13,6 @@ struct Med {
     let frequency: String
 //    let lastTaken: String
 //    let remaining: String
+//    let duration: String
+//    let diagnosis: String
 }

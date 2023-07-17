@@ -34,9 +34,16 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func loadMedications(){
-        meds = []
+
         
-        db.collection(K.FStore.collectionName).getDocuments() { [self] (querySnapshot, err) in
+//        displays medications from from database
+        db.collection(K.FStore.collectionName)
+            .order(by:K.FStore.nameField)
+            .addSnapshotListener {(querySnapshot, err) in
+            
+            self.meds = []
+            
+            
             if let err = err {
                 print("Error getting medication list: \(err)")
             } else {
@@ -44,9 +51,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                     for document in snapshotDocuments {
                         let data = document.data()
                         if let medName = data[K.FStore.nameField] as? String, let medDose = data[K.FStore.doseField] as? String, let medFrequency = data[K.FStore.freqField] as? String {
-                            let newMed = Med(name: medName, dose: medDose, frequency: medFrequency)
+                            let newMed = Med(name: medName.capitalized, dose: medDose, frequency: medFrequency)
                             self.meds.append(newMed)
+
                             
+//                            reloads app to show updated list
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
@@ -57,10 +66,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+//    button function submitting a new entry to the database
     @IBAction func addMed(_ sender: UIButton) {
         if let medName = medNameTextfield.text, let medDose = doseTextfield.text, let medFreq = frequencyTextField.text {
             db.collection(K.FStore.collectionName).addDocument(data: [
-                K.FStore.nameField: medName,
+                K.FStore.nameField: medName.capitalized,
                 K.FStore.doseField: medDose,
                 K.FStore.freqField: medFreq
             ]) { error in
@@ -77,6 +87,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return meds.count
         
     }
+//
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedCell") as! MedCell
         
